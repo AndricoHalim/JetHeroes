@@ -1,6 +1,7 @@
 package com.andricohalim.jetheroes
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
@@ -90,7 +91,7 @@ fun JetHeroesApp(
                     HeroListItem(
                         name = hero.name,
                         photoUrl = hero.photoUrl,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth() .animateItemPlacement(tween(durationMillis = 100))
                     )
                 }
             }
